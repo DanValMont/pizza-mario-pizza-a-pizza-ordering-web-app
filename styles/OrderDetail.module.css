@@ -1,0 +1,95 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(219, 215, 215, 0.113);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 500px;
+  background-color: #1d1c1c;
+  color: #b7903c;
+  padding: 10px 50px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.title {
+  color: #41c485;
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.label {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.textarea,
+.input {
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  padding: 5px;
+  font-family: "Bosento";
+  background-color: #222;
+  color: #d8d8d8;
+}
+
+.button {
+  width: 25%;
+  border: none;
+  background-color: #41c485;
+  font-family: "Bosento";
+  font-size: 18px;
+  color: white;
+  font-weight: 400;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 0;
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #41c485ab;
+  transition: all 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 901px) and (max-width: 1024px) {
+    .wrapper {
+  max-width: 600px;
+}
+}
+
+@media screen and (min-width: 820px) and (max-width: 900px) {
+    .wrapper {
+  max-width: 1200px;
+  padding: 0px 20px;
+}
+.title {
+  padding: 0;
+  margin: 5px 0;
+}
+.button {
+  margin-top: 0;
+  font-size: 16px;
+  margin: 5px 0;
+}
+}

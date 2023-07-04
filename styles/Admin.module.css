@@ -1,0 +1,42 @@
+.container {
+  padding: 50px;
+  display: flex;
+  font-family: "Bosento";
+  background-color: #1d1c1c;
+  color: #d8d8d8;
+}
+
+.item {
+  flex: 1;
+}
+
+.title {
+  color: #b7903c;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 20px;
+  text-align: left;
+  font-size: 22px;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.button:first-child {
+  background-color: teal;
+  margin-right: 10px;
+  font-family: "Bosento";
+  font-size: 18px;
+}
+
+.button:last-child {
+  background-color: #e2293f;
+  font-family: "Bosento";
+  font-size: 18px;
+}

@@ -1,0 +1,112 @@
+.container {
+    height: calc(100vh - 100px);
+    background-color: #1d1c1c;
+    display: flex;
+    font-family: "Bosento";
+}
+
+.item {
+    flex: 1;
+    position: relative;
+    display: flex;
+}
+
+.item:nth-child(2) {
+    flex: 2;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 18px;
+    color: #b7903c;
+}
+
+.text {
+    color: lightgray;
+}
+
+.motto {
+    color: rgb(211, 211, 211);
+}
+
+.title {
+    font-size: 30px;
+}
+
+.price, .description {
+    font-size: 24px;
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1080px) {
+    .container {
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1024px) {
+    
+    .container {
+    height: auto;
+    background:
+    linear-gradient(rgba(41, 41, 41, 0.805), rgba(41, 41, 41, 0.805) ), url("/img/bgFooterSmMd.jpg");
+    background-size: cover;
+    }
+
+    .item:first-child {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .container {
+        height: auto;
+    background:
+    linear-gradient(rgba(41, 41, 41, 0.805), rgba(41, 41, 41, 0.805) ), url("/img/bgFooterSmMd.jpg");
+    background-size: cover;
+    }
+
+    .item:first-child {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        height: auto;
+        text-align: center;
+        padding: 0;
+    }
+
+    .item:first-child {
+        display: none;
+    }
+
+    .item:last-child {
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .item:nth-child(2) {
+    flex: 2;
+    padding: 0;
+    justify-content: space-between;
+}
+}

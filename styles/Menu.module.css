@@ -1,0 +1,327 @@
+.menu_wrapper.active {
+    animation-name: show;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.menu_wrapper {
+    font-family: "Bosento";
+    background-color: #1d1c1c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5; 
+    width: 0%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    transition: width 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.menu_wrapper_inactive {
+    font-family: "Bosento";
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    overflow: hidden;
+    transform: translateX(-100%);
+    animation-name: hide;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+
+
+.menu_list_container {
+    width: 100%;
+    height: 100%;
+    font-family: "Bosento";
+    background-color: #1d1c1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10vw;
+    padding-top: 0px;
+    padding-top: 5vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 6;
+}
+
+
+
+
+.menu_list_container ul {
+    list-style-type: none;
+}
+
+
+.menu_list_container ul li:nth-child(1) {
+    font-family: "Bosento";
+    font-size: 5vh; /*6vh*/
+    font-weight: normal;
+    line-height: 170%;
+    cursor: pointer;
+    color: #b7903c;
+    position: relative;
+    padding-top: 2vh;
+    animation-name: animateIn;
+    animation-duration: 1000ms;
+    animation-delay: 600ms; /*1200ms*/
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.menu_list_container ul li:nth-child(2) {
+    font-family: "Bosento";
+    font-size: 5vh;
+    font-weight: normal;
+    line-height: 170%;
+    cursor: pointer;
+    color: #b7903c;
+    position: relative;
+    padding-top: 2vh;
+    animation-name: animateIn;
+    animation-duration: 1000ms;
+    animation-delay: 800ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.menu_list_container ul li:nth-child(3) {
+    font-family: "Bosento";
+    font-size: 5vh;
+    font-weight: normal;
+    line-height: 170%;
+    cursor: pointer;
+    color: #b7903c;
+    position: relative;
+    padding-top: 2vh;
+    animation-name: animateIn;
+    animation-duration: 1000ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.menu_list_container ul li:nth-child(4) {
+    font-family: "Bosento";
+    font-size: 5vh;
+    font-weight: normal;
+    line-height: 170%;
+    cursor: pointer;
+    color: #b7903c;
+    position: relative;
+    padding-top: 2vh;
+    animation-name: animateIn;
+    animation-duration: 1000ms;
+    animation-delay: 1200ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.menu_list_container ul li:nth-child(5) {
+    font-family: "Bosento";
+    font-size: 5vh;
+    font-weight: normal;
+    line-height: 170%;
+    cursor: pointer;
+    color: #b7903c;
+    position: relative;
+    padding-top: 2vh;
+    animation-name: animateIn;
+    animation-duration: 1000ms;
+    animation-delay: 1400ms; /*2000ms*/
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.menu_list_container ul li:nth-child(6) {
+    font-family: "Bosento";
+    font-size: 5vh;
+    font-weight: normal;
+    line-height: 170%;
+    cursor: pointer;
+    color: #b7903c;
+    position: relative;
+    padding-top: 2vh;
+    animation-name: animateIn;
+    animation-duration: 1000ms;
+    animation-delay: 1600ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.menu_list_container ul li:nth-child(7) {
+    font-family: "Bosento";
+    font-size: 5vh;
+    font-weight: normal;
+    line-height: 170%;
+    cursor: pointer;
+    color: #b7903c;
+    position: relative;
+    padding-top: 2vh;
+    animation-name: animateIn;
+    animation-duration: 1000ms;
+    animation-delay: 1800ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes animateIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5vh);
+        transition: transform 1000ms ease-in-out 250ms;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0vh);
+        transition: transform 1500ms ease-in-out 250ms;
+    }
+}
+
+@keyframes show {
+    0% {
+        width: 0;
+        transform: translateX(-100%);
+        transition: transform 1000ms ease-in-out 250ms;
+    }
+
+    100% {
+        width: 100%;
+        transform: translateX(0%);
+        transition: transform 1500ms ease-in-out 250ms;
+    }
+}
+
+@keyframes hide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+
+}
+
+
+.menu_list_container ul li.closing {
+    font-family: "Bosento";
+    font-size: 5vh; /*6vh*/
+    font-weight: normal;
+    line-height: 170%;
+    cursor: pointer;
+    color: #b7903c;
+    position: relative;
+    padding-top: 2vh;
+    opacity: 1;
+    animation-name: animateOff;
+    animation-duration: 400ms;
+    animation-delay: 100ms;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes animateOff {
+    0% {
+        opacity: 1;
+        transition: opacity 1000ms ease-in-out 250ms; 
+    }
+
+    100% {
+        opacity: 0;
+        transition: opacity 1500ms ease-in-out 250ms;
+    }
+}
+
+.menu_list_container ul li.visible::after {
+    width: 100% !important;
+}
+
+.menu_list_container ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0%;
+    background-color: white;
+    transition: width 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: width 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+
+@media screen and (max-width: 1024px) /*900px*/ {
+    .menu_list_container {
+        width: 100% !important;
+    }
+
+}
+
+@media screen and (max-height: 450px) and (orientation: landscape) {
+    .menu_list_container ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 20vh;
+    }
+
+    .menu_list_container ul li {
+        flex: 1 0 50%;
+    }
+
+    .menu_list_container ul li:not(:last-child)::after {
+    /*it can be customizable according to even or odd menu list*/
+    width: 90% !important;
+    
+    } 
+
+    .menu_list_container ul li:last-child::after {
+    /*it can be customizable according to even or odd menu list*/
+    width: 45% !important;
+    
+    }
+
+.menu_list_container ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0%;
+    background-color: white;
+    transition: width 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: width 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+ }
+
+@media screen and (min-width: 1025px) /*901px*/{
+    .menu_wrapper.active {
+        display: none;
+    }
+
+    .menu_wrapper_inactive {
+        display: none;
+    }
+
+    .menu_list_container {
+       display: none;
+    }
+}

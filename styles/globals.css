@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Bosento";
+  src: url("/fonts/Bosento/Bosento.otf");
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,281 @@
+.container{
+    height: calc(100vh - 100px);
+    display: flex;
+    color: #d8d8d8;
+    background-color: #1d1c1c;
+    font-family: "Bosento";
+}
+
+.title {
+    color: #d1411e; 
+}
+
+.description {
+    font-size: 20px;
+}
+
+.left {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    flex: 1;
+    padding: 20px;
+    padding-right: 100px;
+}
+
+.imgContainer {
+    width: 80%;
+    height: 80%;
+    position: relative;
+}
+
+.price {
+    color: #41c485;
+    font-size: 24px;
+    font-weight: 400;
+    border-bottom: 1px solid #41c485;
+}
+
+.choose {
+    color: #b7903c;
+    font-size: 24px;
+}
+
+.sizes {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.size {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.size:nth-child(2) {
+    width: 40px;
+    height: 40px;
+}
+
+.size:last-child {
+    width: 50px;
+    height: 50px;
+}
+
+.number {
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    background-color: teal;
+    color: white;
+    font-size: 12px;
+    padding: 0 5px;
+    border-radius: 10px;
+}
+
+.ingredients {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.quantity {
+    width: 50px;
+    height: 30px;
+}
+
+.button {
+    height: 30px;
+    margin-left: 10px;
+    background-color: #d1411e;
+    color: white;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: "Bosento";
+    font-size: 18px;
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1080px) {
+    .container {
+        height: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin: 0;
+    }
+
+    .left {
+    flex: 1;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .right {
+    flex: 1;
+    align-self: center;
+    padding: 20px;
+    padding-right: 70px;
+    height: auto;
+}
+
+    .sizes {
+        width: 85%;
+        padding: 0px 0px;
+    }
+
+    .ingredients {
+        flex-direction: column;
+    }
+    
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1024px) {
+    .container {
+        height: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin: 0;
+    }
+
+    .left {
+    flex: 1;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .right {
+    flex: 1;
+    align-self: center;
+    padding: 20px;
+    padding-right: 70px;
+    height: auto;
+}
+
+    .sizes {
+        width: 85%;
+        padding: 0px 0px;
+    }
+
+    .ingredients {
+        flex-direction: column;
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        height: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin: 0;
+    }
+
+    .left {
+    flex: 1;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .right {
+    flex: 1;
+    align-self: center;
+    padding: 20px;
+    padding-right: 70px;
+    height: auto;
+}
+
+    .sizes {
+        width: 85%;
+        padding: 0px 0px;
+    }
+
+    .ingredients {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        height: auto;
+        text-align: center;
+        flex-direction: column;
+        padding-top: 40px;
+    }
+
+    .imgContainer {
+        width: 70vw;
+        height: 70vw;
+    }
+
+    .title {
+        margin: 5px;
+    }
+
+    .description {
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    .choose {
+        font-size: 24px;
+    }
+
+    .right {
+    padding: 20px;
+    }
+
+    .sizes {
+        width: 100%;
+        padding: 0px 20px;
+    }
+
+    .ingredients {
+        flex-direction: column;
+    }
+
+    .option {
+        margin: 10px;
+        font-size: 18px;
+    }
+
+    .checkbox {
+        width: 25px;
+        height: 25px;
+    }
+
+    .quantity {
+        height: 50px;
+        width: 80px;
+        padding: 10px 20px;
+    }
+
+    .button {
+        height: 50px;
+        padding: 10px 20px;
+    }
+}

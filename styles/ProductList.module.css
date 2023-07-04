@@ -1,0 +1,37 @@
+.container {
+    font-family: "Bosento";
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    background-color: #1d1c1c;
+}
+
+.description {
+    font-size: 24px;
+    color: #d8d8d8;
+    width: 70%;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    grid-auto-rows: auto;
+    width: 100%;
+}
+
+.title {
+    color: #b7903c;
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        text-align: center;
+    }
+
+    .description {
+        width: 90%;
+        text-align: center;
+    }
+}

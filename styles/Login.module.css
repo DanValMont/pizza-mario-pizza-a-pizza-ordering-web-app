@@ -1,0 +1,50 @@
+.container {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bosento";
+  background-color: #1d1c1c;
+  color: #b7903c;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+  font-family: "Bosento";
+  background-color: #222;
+  color: #d8d8d8;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  font-size: 18px;
+}
+
+.button {
+  height: 40px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #41c485;
+  font-family: "Bosento";
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #41c485ab;
+  transition: all 0.5s ease-in-out;
+}
+
+.error {
+  font-size: 13px;
+  color: red;
+}

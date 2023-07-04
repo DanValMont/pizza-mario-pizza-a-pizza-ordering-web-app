@@ -1,0 +1,93 @@
+.container {
+  padding: 50px;
+  display: flex;
+  font-family: "Bosento";
+  background-color: #1d1c1c;
+  color: #d8d8d8;
+  gap: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20%;
+    background-color: #222;
+    padding-top: 10px;
+}
+
+.menuButton {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #b7903c;
+  font-family: "Bosento";
+  font-size: 24px;
+  text-align: left;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.menuButton:hover {
+  background-color: rgb(23, 23, 23);
+  transition: all 0.8s ease-in-out;
+}
+
+.summaryContainer{
+    flex: 1 1 80%;
+    flex-direction: column;
+    background-color: #222;
+} 
+
+.cardsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.sales {
+  color: #41c485;
+}
+
+.cardBox {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardButton {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #b7903c;
+  font-family: "Bosento";
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.salesChartContainer {
+  padding: 40px 0;
+}
+
+.salesTitle {
+  padding-left: 55px;
+}
+
+@media screen and (max-width: 1080px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .cardBox h1 {
+        font-size: 22px;
+}
+}

@@ -1,0 +1,117 @@
+.container {
+  padding: 50px;
+  display: flex;
+  font-family: "Bosento";
+  background-color: #1d1c1c;
+  color: #d8d8d8;
+  gap: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20%;
+    background-color: #222;
+    padding-top: 10px;
+}
+
+.menuButton {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #b7903c;
+  font-family: "Bosento";
+  font-size: 24px;
+  text-align: left;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.menuButton:hover {
+  background-color: rgb(23, 23, 23);
+  transition: all 0.8s ease-in-out;
+}
+
+.ordersContainer {
+    flex: 1 1 80%;
+    flex-direction: column;
+    background-color: #222;
+} 
+
+.title {
+  color: #b7903c;
+  padding-left: 55px;
+}
+
+.trTitle{
+  color: #b7903c;
+}
+
+.trTitle td {
+  color: #d8d8d8;
+}
+
+.trTitle td:nth-child(3) {
+  color: #41c485;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 20px;
+  text-align: left;
+  font-size: 22px;
+  margin: 0 40px;
+}
+
+.button {
+  border: none;
+  background-color: #0060df;
+  padding: 10px;
+  font-family: "Bosento";
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #0061dfc5;
+  transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1080px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tableContainer {
+  overflow-x: scroll;
+}
+
+.title {
+  padding-left: 20px;
+}
+
+
+.table {
+  border-spacing: 10px;
+  font-size: 20px;
+  margin: 0 10px;
+}
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .table {
+      font-size: 16px;
+    }
+
+    .button {
+      font-size: 16px;
+    }
+}

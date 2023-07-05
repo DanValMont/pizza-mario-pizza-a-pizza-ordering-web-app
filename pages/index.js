@@ -2,11 +2,10 @@ import axios from "axios";
 import Head from "next/head";
 import Featured from "../components/Featured";
 import ProductList from "../components/ProductList";
-import styles from "../styles/Home.module.css";
 
 export default function Home({ pizzaList }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Welcome to Pizza Mario</title>
         <meta

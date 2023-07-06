@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "../../styles/Order.module.css";
 import Image from 'next/image';
 import axios from 'axios';
+import Layout from '../../components/Layout';
 
 
 const Order = ({ order }) => {
@@ -14,6 +15,7 @@ const Order = ({ order }) => {
     };
 
   return (
+    <Layout title={order._id}>
     <div className={styles.container}>
         <div className={styles.left}>
             <div className={styles.row}>
@@ -95,6 +97,7 @@ const Order = ({ order }) => {
             </div>
         </div>
     </div>
+    </Layout>
   )
 }
 

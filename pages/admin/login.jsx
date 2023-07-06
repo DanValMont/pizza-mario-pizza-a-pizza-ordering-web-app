@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "../../styles/Login.module.css";
 import { useDispatch } from "react-redux";
 import { loggedInAdmin } from "../../redux/adminSlice";
+import Layout from "../../components/Layout";
 
 const Login = () => {
   const [username, setUsername] = useState(null);
@@ -26,6 +27,7 @@ const Login = () => {
   };
 
   return (
+    <Layout title="Login">
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <h1>Admin Dashboard</h1>
@@ -46,6 +48,7 @@ const Login = () => {
         {error && <span className={styles.error}>Wrong Credentials!</span>}
       </div>
     </div>
+    </Layout>
   );
 };
 

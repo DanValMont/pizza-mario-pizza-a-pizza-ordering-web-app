@@ -6,6 +6,7 @@ import Add from "../../components/Add";
 import Edit from "../../components/Edit";
 import AddButton from "../../components/AddButton";
 import styles from "../../styles/AdminProducts.module.css";
+import Layout from "../../components/Layout";
 
 const AdminProducts = ({ products }) => {
   const [pizzaList, setPizzaList] = useState(products);
@@ -27,6 +28,7 @@ const AdminProducts = ({ products }) => {
 
 
   return (
+    <Layout title="Products">
     <div className={styles.container}>
       <div className={styles.menu}>
             <NextLink href="/admin/dashboard" passHref>
@@ -87,6 +89,7 @@ const AdminProducts = ({ products }) => {
       {!close && <Add setClose={setClose} />}
       {!closeEdit && <Edit setCloseEdit={setCloseEdit} productEdit={productEdit} />}
     </div>
+    </Layout>
   );
 };
 

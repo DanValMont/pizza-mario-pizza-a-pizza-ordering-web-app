@@ -32,6 +32,8 @@ const Navbar = () => {
        try {
       await axios.get("http://localhost:3000/api/logout");
       dispatch(loggedOutAdmin(false));
+      setActive("false");
+      setMenu(false); //
       router.push("/");
     } catch (err) {
       setError(true);
@@ -74,7 +76,7 @@ const Navbar = () => {
             admin && (
                <div className={styles.adminMenuWrapper} onClick={handleAdminMenu}>
             <button className={styles.avatarButtonIcon} ><Image src="/img/adminAvatar.png" alt="admin-avatar-button-menu" width="32" height="32" /></button>
-            <div className={adminMenu ? `${styles.adminMenu}` : `${styles.animateMenu}`}>
+            <div className={!adminMenu ? `${styles.adminMenu}` : `${styles.animateMenu}`}>
                 <ul className={styles.menuList}>
                     <Link href="/admin/dashboard" passHref>
                         <li className={styles.listItem}>Dashboard</li>

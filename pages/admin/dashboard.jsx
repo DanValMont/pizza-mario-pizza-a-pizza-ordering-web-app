@@ -7,6 +7,7 @@ import { CategoryScale, Chart, LinearScale,
   Title,
   Tooltip,
   Legend, } from "chart.js";
+import Layout from "../../components/Layout";
 
 Chart.register(CategoryScale, LinearScale,
   BarElement,
@@ -18,6 +19,7 @@ Chart.register(CategoryScale, LinearScale,
 const AdminDashboard = ({summary}) => {
   
   return (
+    <Layout title="Admin Dashboard">
     <div className={styles.container}>
         <div className={styles.menu}>
             <NextLink href="/admin/dashboard" passHref>
@@ -90,6 +92,7 @@ const AdminDashboard = ({summary}) => {
           </div>
         </div>
     </div>
+    </Layout>
   )
 }
 

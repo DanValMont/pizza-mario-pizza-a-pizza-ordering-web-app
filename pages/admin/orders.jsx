@@ -1,6 +1,7 @@
 import axios from "axios";
 import NextLink from "next/link";
 import { useState } from "react";
+import Layout from "../../components/Layout";
 import styles from "../../styles/AdminOrders.module.css";
 
 const AdminOrders = ({ orders }) => {
@@ -27,6 +28,7 @@ const AdminOrders = ({ orders }) => {
   };
 
   return (
+    <Layout title="Orders">
     <div className={styles.container}>
       <div className={styles.menu}>
             <NextLink href="/admin/dashboard" passHref>
@@ -74,6 +76,7 @@ const AdminOrders = ({ orders }) => {
         </table></div>
       </div>
     </div>
+    </Layout>
   );
 };
 

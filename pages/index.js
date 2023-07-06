@@ -1,12 +1,14 @@
 import axios from "axios";
-import Head from "next/head";
+//import Head from "next/head";
 import Featured from "../components/Featured";
+import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
 
 export default function Home({ pizzaList }) {
   return (
-    <div>
-      <Head>
+    <Layout description="Welcome to Pizza Mario. Best Pizzeria e-restaurant in New York.">
+      <div>
+        {/* <Head>
         <title>Welcome to Pizza Mario</title>
         <meta
           name="description"
@@ -44,10 +46,12 @@ export default function Home({ pizzaList }) {
           as="font"
           crossOrigin=""
         />
-      </Head>
-      <Featured />
-      <ProductList pizzaList={pizzaList} />
-    </div>
+      </Head> */}
+
+        <Featured />
+        <ProductList pizzaList={pizzaList} />
+      </div>
+    </Layout>
   );
 }
 

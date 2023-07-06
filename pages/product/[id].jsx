@@ -4,6 +4,7 @@ import styles from "../../styles/Product.module.css";
 import axios from 'axios';
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
+import Layout from '../../components/Layout';
 
 const Product = ({pizza}) => {
 
@@ -41,6 +42,7 @@ const Product = ({pizza}) => {
 
 
   return (
+    <Layout title={pizza.title} description={pizza.description}>
     <div className={styles.container}>
         <div className={styles.left}>
             <div className={styles.imgContainer}>
@@ -83,6 +85,7 @@ const Product = ({pizza}) => {
             </div>
         </div>
     </div>
+    </Layout>
   )
 }
 

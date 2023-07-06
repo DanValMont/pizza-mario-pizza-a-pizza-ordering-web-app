@@ -13,6 +13,7 @@ import { reset } from "../redux/cartSlice";
 import OrderDetail from "../components/OrderDetail";
 import { removeProduct } from "../redux/cartSlice";
 import easyinvoice from 'easyinvoice';
+import Layout from '../components/Layout';
 
 
 const Cart = () => {
@@ -165,6 +166,7 @@ easyinvoice.download(`pizza_mario_invoice_${res.data._id}.pdf`, result.pdf);
 
 
   return (
+    <Layout title="Shopping Cart">
     <div className={styles.container}>
         <div className={styles.left}>
             <table className={styles.table}>
@@ -259,6 +261,7 @@ easyinvoice.download(`pizza_mario_invoice_${res.data._id}.pdf`, result.pdf);
          </div>
          {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
     </div>
+    </Layout>
   )
 }
 

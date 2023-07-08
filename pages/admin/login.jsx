@@ -18,7 +18,7 @@ const Login = () => {
       await axios.post("http://localhost:3000/api/login", {
         username,
         password,
-      });
+      }, { withCredentials: true });
       dispatch(loggedInAdmin(true));
       router.push("/admin/dashboard");
     } catch (err) {

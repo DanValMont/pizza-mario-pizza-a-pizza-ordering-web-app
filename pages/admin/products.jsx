@@ -7,6 +7,8 @@ import Edit from "../../components/Edit";
 import AddButton from "../../components/AddButton";
 import styles from "../../styles/AdminProducts.module.css";
 import Layout from "../../components/Layout";
+import Product from "../../models/Product";
+import dbConnect from "../../utils/mongoDBConnect";
 
 const AdminProducts = ({ products }) => {
   const [pizzaList, setPizzaList] = useState(products);
@@ -105,11 +107,15 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productRes = await axios.get("http://localhost:3000/api/products");
+  await dbConnect();
+
+  // const productRes = await axios.get("http://localhost:3000/api/products");
+  const productRes = await Product.find();
 
   return {
     props: {
-      products: productRes.data,
+      // products: productRes.data,
+      products: JSON.parse(JSON.stringify(productRes)),
     },
   };
 };

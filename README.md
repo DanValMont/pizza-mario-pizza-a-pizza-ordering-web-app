@@ -36,4 +36,4 @@ A beautiful, responsive and SEO optimized pizza ordering web application using n
 
 ## Demo Website
 
-[2ECHO](https://2-echo-real-time-advertisement-web-app-on-an-interactive-map.vercel.app/)
+[PIZZA MARIO](https://pizza-mario-pizza-a-pizza-ordering-web-app.vercel.app/)

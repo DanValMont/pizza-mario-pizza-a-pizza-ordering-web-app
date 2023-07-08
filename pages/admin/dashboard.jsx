@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import NextLink from "next/link";
 import { Bar } from "react-chartjs-2";
 import styles from "../../styles/AdminDashboard.module.css";
@@ -8,6 +8,9 @@ import { CategoryScale, Chart, LinearScale,
   Tooltip,
   Legend, } from "chart.js";
 import Layout from "../../components/Layout";
+import Order from "../../models/Order";
+import Product from "../../models/Product";
+import dbConnect from "../../utils/mongoDBConnect";
 
 Chart.register(CategoryScale, LinearScale,
   BarElement,
@@ -108,11 +111,34 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const summaryRes = await axios.get("http://localhost:3000/api/summary");
+  await dbConnect();
+
+  // const summaryRes = await axios.get("http://localhost:3000/api/summary");
+      const ordersCount = await Order.countDocuments();
+      const productsCount = await Product.countDocuments();
+      const ordersPriceGroup = await Order.aggregate([
+        {
+          $group: {
+            _id: null,
+            sales: { $sum: "$total" },
+          },
+        },
+      ]);
+      const ordersPrice =
+        ordersPriceGroup.length > 0 ? ordersPriceGroup[0].sales : 0;
+      const salesData = await Order.aggregate([
+        {
+          $group: {
+            _id: { $dateToString: { format: "%Y-%m", date: "$createdAt" } },
+            totalSales: { $sum: "$total" },
+          },
+        },
+      ]);
 
   return {
     props: {
-      summary: summaryRes.data,
+      // summary: summaryRes.data,
+      summary: JSON.parse(JSON.stringify({ordersCount, productsCount, ordersPrice, salesData})),
     },
   };
 };

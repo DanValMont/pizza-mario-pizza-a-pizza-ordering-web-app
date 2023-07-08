@@ -1,7 +1,10 @@
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
+import Order from "../../models/Order";
+import Product from "../../models/Product";
 import styles from "../../styles/Admin.module.css";
+import dbConnect from "../../utils/mongoDBConnect";
 
 const Index = ({ orders, products }) => {
   const [pizzaList, setPizzaList] = useState(products);
@@ -129,13 +132,19 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productRes = await axios.get("http://localhost:3000/api/products");
-  const orderRes = await axios.get("http://localhost:3000/api/orders");
+  // const productRes = await axios.get("http://localhost:3000/api/products");
+  // const orderRes = await axios.get("http://localhost:3000/api/orders");
+  await dbConnect();
+
+  const productRes = await Product.find();
+  const orderRes = await Order.find();
 
   return {
     props: {
-      orders: orderRes.data,
-      products: productRes.data,
+      // orders: orderRes.data,
+      // products: productRes.data,
+      orders: JSON.parse(JSON.stringify(orderRes)),
+      products: JSON.parse(JSON.stringify(productRes)),
     },
   };
 };

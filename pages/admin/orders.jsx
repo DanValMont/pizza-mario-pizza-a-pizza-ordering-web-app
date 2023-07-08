@@ -2,7 +2,9 @@ import axios from "axios";
 import NextLink from "next/link";
 import { useState } from "react";
 import Layout from "../../components/Layout";
+import Order from "../../models/Order";
 import styles from "../../styles/AdminOrders.module.css";
+import dbConnect from "../../utils/mongoDBConnect";
 
 const AdminOrders = ({ orders }) => {
 
@@ -92,11 +94,15 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const orderRes = await axios.get("http://localhost:3000/api/orders");
+  await dbConnect();
+
+  // const orderRes = await axios.get("http://localhost:3000/api/orders");
+  const orderRes = await Order.find();
 
   return {
     props: {
-      orders: orderRes.data,
+      // orders: orderRes.data,
+      orders: JSON.parse(JSON.stringify(orderRes)),
     },
   };
 };

@@ -1,11 +1,13 @@
 import React from 'react'
 import styles from "../../styles/Order.module.css";
 import Image from 'next/image';
-import axios from 'axios';
+// import axios from 'axios';
 import Layout from '../../components/Layout';
+import Order from '../../models/Order';
+import dbConnect from '../../utils/mongoDBConnect';
 
 
-const Order = ({ order }) => {
+const OrderItem = ({ order }) => {
     const status = order.status;
 
     const statusClass = (index) => {
@@ -102,10 +104,17 @@ const Order = ({ order }) => {
 }
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+//   const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+
+  await dbConnect();
+
+  const res = await Order.findById(params.id);
   return {
-    props: { order: res.data },
+    // props: { order: res.data },
+    props: {
+      order: JSON.parse(JSON.stringify(res)),
+    },
   };
 };
 
-export default Order;
+export default OrderItem;

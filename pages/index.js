@@ -1,8 +1,10 @@
-import axios from "axios";
+// import axios from "axios";
 //import Head from "next/head";
 import Featured from "../components/Featured";
 import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
+import Product from "../models/Product";
+import dbConnect from "../utils/mongoDBConnect";
 
 export default function Home({ pizzaList }) {
   return (
@@ -56,11 +58,16 @@ export default function Home({ pizzaList }) {
 }
 
 export const getServerSideProps = async (ctx) => {
-  const res = await axios.get("http://localhost:3000/api/products");
+  // const res = await axios.get("http://localhost:3000/api/products");
+
+  await dbConnect();
+
+  const res = await Product.find();
 
   return {
     props: {
-      pizzaList: res.data,
+      // pizzaList: res.data,
+      pizzaList: JSON.parse(JSON.stringify(res)),
     },
   };
 };

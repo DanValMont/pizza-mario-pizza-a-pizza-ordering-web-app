@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import Image from "next/image";
 import styles from "../../styles/Product.module.css";
-import axios from 'axios';
+// import axios from 'axios';
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
 import Layout from '../../components/Layout';
+import dbConnect from '../../utils/mongoDBConnect';
+import Product from '../../models/Product';
 
-const Product = ({pizza}) => {
+
+const ProductItem = ({pizza}) => {
 
   const [price, setPrice] = useState(pizza.prices[0]);
   const [size, setSize] = useState(0);
@@ -90,13 +93,18 @@ const Product = ({pizza}) => {
 }
 
 export const getServerSideProps = async ({params}) => {
-  const res = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+  // const res = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+
+  await dbConnect();
+
+  const res = await Product.findById(params.id);
 
   return {
     props: {
-      pizza: res.data,
+      // pizza: res.data,
+      pizza: JSON.parse(JSON.stringify(res)),
     },
   };
 };
 
-export default Product;
+export default ProductItem;

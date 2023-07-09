@@ -30,7 +30,7 @@ const Navbar = () => {
 
     const logoutClickHandler = async() => {
        try {
-      await axios.get("http://localhost:3000/api/logout");
+      await axios.get("/api/logout");
       dispatch(loggedOutAdmin(false));
       setActive("false");
       setMenu(false); //

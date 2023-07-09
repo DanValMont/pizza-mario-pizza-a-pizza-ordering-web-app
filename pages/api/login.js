@@ -11,10 +11,8 @@ const handler = (req, res) => {
         "Set-Cookie",
         cookie.serialize("token", process.env.TOKEN, {
           maxAge: 60 * 60 * 24 * 7, // 1 week
-          sameSite: "none",
-          httpOnly: true,
-          secure: true,
-          // path: "/",
+          sameSite: "strict",
+          path: "/",
         })
       );
       res.status(200).json("Successful");

@@ -57,7 +57,7 @@ const Edit = ({ setCloseEdit, productEdit }) => {
         img: url,
       };
 
-      const create = await axios.put("http://localhost:3000/api/products/" + productEdit._id, newProduct);
+      const create = await axios.put("/api/products/" + productEdit._id, newProduct);
       setCloseEdit(true);
       router.push("/");
       

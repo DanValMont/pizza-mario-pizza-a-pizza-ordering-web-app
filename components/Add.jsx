@@ -56,7 +56,7 @@ const Add = ({ setClose }) => {
         img: url,
       };
 
-      const create = await axios.post("http://localhost:3000/api/products", newProduct);
+      const create = await axios.post("/api/products", newProduct);
       setClose(true);
       router.push("/");
       

@@ -243,7 +243,7 @@ easyinvoice.download(`pizza_mario_invoice_${res.data._id}.pdf`, result.pdf);
               <PayPalScriptProvider
                 options={{
                   "client-id":
-                  process.env.PAYPAL_CLIENT_ID || "sb",
+                  process.env.PAYPAL_CLIENT_ID,
                   components: "buttons",
                   currency: "USD",
                   "disable-funding": "credit,card,p24",

@@ -20,11 +20,23 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [open, setOpen] = useState(false);
   const [cash, setCash] = useState(false);
+  const [clientId, setClientId] = useState(null);
   const amount = cart.total;
   const currency = "USD";
   const style = { layout: "vertical" };
   const dispatch = useDispatch();
   const router = useRouter();
+
+  useEffect(() => {
+    const loadClientId = async () => {
+      const {data: paypalClientId} = await axios.get("/api/keys/paypal");
+      setClientId(paypalClientId);
+    }
+
+    loadClientId();
+    
+  }, [])
+  
 
   const createOrder = async (data) => {
     try {
@@ -243,7 +255,7 @@ easyinvoice.download(`pizza_mario_invoice_${res.data._id}.pdf`, result.pdf);
               <PayPalScriptProvider
                 options={{
                   "client-id":
-                  process.env.PAYPAL_CLIENT_ID,
+                  clientId,
                   components: "buttons",
                   currency: "USD",
                   "disable-funding": "credit,card,p24",

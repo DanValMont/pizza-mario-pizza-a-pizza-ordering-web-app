@@ -36,4 +36,6 @@ A beautiful, responsive and SEO optimized pizza ordering web application using n
 
 ## Demo Website
 
-[PIZZA MARIO](https://pizza-mario-pizza-a-pizza-ordering-web-app.vercel.app/)
+[PIZZA MARIO - RENDER](https://pizzamario.onrender.com/)
+
+[PIZZA MARIO - VERCEL](https://pizza-mario-pizza-a-pizza-ordering-web-app.vercel.app/)
